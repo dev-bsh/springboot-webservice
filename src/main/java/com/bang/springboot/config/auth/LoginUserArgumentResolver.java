@@ -20,7 +20,7 @@ public class LoginUserArgumentResolver implements HandlerMethodArgumentResolver 
     //컨트롤러 메서드의 특정 파라미터를 지원하는지 판단 , @LoginUser가 붙어있고 SessionUser.class인 경우 true 반환
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
-        boolean isLoginUserAnnotation = parameter.getMethodAnnotation(LoginUser.class) != null;
+        boolean isLoginUserAnnotation = parameter.getParameterAnnotation(LoginUser.class)!= null;
         boolean isUserClass = SessionUser.class.equals(parameter.getParameterType());
         return isLoginUserAnnotation && isUserClass;
     }
