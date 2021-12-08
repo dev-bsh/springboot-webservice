@@ -26,7 +26,7 @@ public class IndexControllerTest {
         String body = testRestTemplate.getForObject("/",String.class);
 
         //then
-        assertThat(body).contains("메인페이지");
+        assertThat(body).contains("스프링부트 웹 서비스");
     }
 
 
